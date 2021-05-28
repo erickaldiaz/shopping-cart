@@ -14,9 +14,10 @@ const productsDOM = document.querySelector('.products-center');
 let cart = [];
 
 //getting the products
-
+guarda la info que trae del json en result
+En data convierte esa info en un json
 class Products {
-    async getProducts() {
+    async getProducts(){
         try {
             let result = await fetch ("products.json");
             let data = await result.json();
