@@ -37,7 +37,9 @@ class Products {
 }
 //displau products
 class UI {
-
+    disolayProducts(products){
+        console.log(products)
+    }
 }
 //local storage
 class Storage {
@@ -48,5 +50,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const products = new Products();
 
     //get all products
-    products.getProducts().then(data => console.log(data));
+    products.getProducts().then(products => ui.disolayProducts(products));
 });
