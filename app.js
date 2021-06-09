@@ -38,7 +38,12 @@ class Products {
 //displau products
 class UI {
     disolayProducts(products){
-        console.log(products)
+        let result = '';
+        products.forEach(product => {
+            result += ´
+            ´
+        
+        })
     }
 }
 //local storage
@@ -50,5 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const products = new Products();
 
     //get all products
-    products.getProducts().then(products => ui.displayProducts(products));
+    products.getProducts().then(products => 
+        ui.displayProducts(products));
 });
