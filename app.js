@@ -40,10 +40,20 @@ class UI {
     disolayProducts(products){
         let result = '';
         products.forEach(product => {
-            result += ´
-            ´
-        
-        })
+            result += `
+            <article class="product">
+            <div class="img-container">
+                <img src= ${product.image}>
+                <button class="bag-btn" data-id=${product.id}>
+                <i class="fas fa-shopping-cart"></i>
+                Agregar al carrito
+                </button>
+            </div>
+            <h3>${product.title}</h3>
+            <h4>${product.price}</h4>
+        </article>`;
+        });
+        productsDOM.innerHTML = result;
     }
 }
 //local storage
