@@ -57,6 +57,7 @@ class UI {
     }
     getBagButtons(){
         const buttons = [...document.querySelectorAll(".bag-btn")];
+        buttonsDOM = buttons;
         buttons.forEach(button => {
             let id = button.dataset.id;
             let inCart = cart.find(item => item.id === id);
@@ -82,6 +83,10 @@ class UI {
 class Storage {
     static saveProducts(products) {
         localStorage.setItem("products", JSON.stringify(products));
+    }
+    static getProducts(id){
+        let products = JSON.parse(localStorage.getItem('products'));
+        return products.find()
     }
 }
 document.addEventListener('DOMContentLoaded', () => {
