@@ -65,10 +65,12 @@ class UI {
                 button.innerText = "In Cart";
                 button.disabled = true;
             } else {
-                button.addEventListener("click", event => {
+                button.addEventListener('click', event => {
                     event.target.innerText = "In Cart";
                     event.target.disabled = true;
                     //get product from products
+                    let cartItem = Storage.getProducts(id);
+                    console.log(cartItem);
                     //add products to the cart
                     //save cart in local storage
                     //set cart values
@@ -86,7 +88,7 @@ class Storage {
     }
     static getProducts(id){
         let products = JSON.parse(localStorage.getItem('products'));
-        return products.find()
+        return products.find(product => product.id === id)
     }
 }
 document.addEventListener('DOMContentLoaded', () => {
